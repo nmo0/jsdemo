@@ -32,7 +32,7 @@
                     errorFn.call(this, xhr.responseText);
                 }
             };
-            xhr.send(data);
+            xhr.send(JSON.stringify(data));
         }
     }
 
@@ -59,8 +59,8 @@
         submitButton.addEventListener('click', function () {
     
             var data = {
-                name: document.querySelector('#frm_动态创建的id input[name="name"]').nodeValue,
-                age: document.querySelector('#frm_动态创建的id input[name="age"]').nodeValue
+                name: document.querySelector('#frm_动态创建的id input[name="name"]').value,
+                age: document.querySelector('#frm_动态创建的id input[name="age"]').value
             };
     
             // 接入留资模块的页面需要实现 beforeSubmit 函数以初始化数据（例如微信认证后获取到的用户昵称头像等）
